@@ -47,9 +47,32 @@ h1 {
     height: 100px;
     width: 100px;
 }
+
 .top-buffer {
      margin-top:20px; 
 }
 .lastupdated {
     color: #6a6c70;
+}
+.mlistp {
+    padding: 10px;
+}
+.mlistp p {
+    background-color: rgba(255, 255, 255, 0.466);
+    box-shadow: 1px 2px 2px rgba(23,39,64,.03), 2px 2px 12px rgba(23,39,64,.09);
+    border: 1px solid #dedee7;
+    border-radius: 4px; 
+    padding: 10px;
+}
+.mlistp p:hover {
+    box-shadow: 3px 4px 4px rgba(23,39,64,.03), 4px 4px 14px rgba(23,39,64,.09);
+    transition: all .3s ease;
+}
+#members {
+   
+}
+.mininav {
+    display: inline-block;
+    float: none;
+    text-align: center;
 }
