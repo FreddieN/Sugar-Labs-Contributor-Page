@@ -15,83 +15,48 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- Main css -->
     <link href="css/style.css" rel="stylesheet">
+    <script src="scripts/opensource.js"></script>
 </head>
 <body>
     <br><br>
     <div class="container main">
      <h4 class="titleuline">The Sugar Labs Team</h4>
-     <div class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque condimentum feugiat vestibulum. Donec efficitur elit ut porta suscipit. Quisque vestibulum convallis dui tristique vestibulum. Vestibulum vitae sem eu erat tincidunt fermentum eget eu mi. Morbi vitae nulla tempus, accumsan nisl vitae, lacinia lorem. Vivamus in mauris massa. Proin rutrum, massa a porttitor sollicitudin, ante orci scelerisque dolor, non efficitur ante arcu et lectus. Aenean tincidunt suscipit enim, ornare tempus arcu bibendum in.</div>
-     <br><br>
-     <div class="container">
-            <div class="row">
-              <div class="col">
-                <img style="background-color: white;" class="img-fluid rounded bigpimage1" src="images/sugarlabsnoimg.png">
-              </div>
-
-              <div class="col-9">
-                <h5 class="bigname">Firstname Lastname</h5>
-                <h6 class="bigrole">ROLE</h6>
-                <p>
-                        Cras ac mauris ipsum. Quisque volutpat libero eget condimentum dignissim. Pellentesque justo turpis, molestie nec sagittis id, finibus a sem. Donec magna quam, accumsan ut luctus ac, porta in ante. Fusce egestas leo id velit facilisis volutpat. Proin pharetra ullamcorper neque, id rhoncus est pharetra ac. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec auctor semper consectetur.
-                </p>
-              </div>
+     <div class="intro"><p>Sugar Labs is a community-run software project whose mission is to produce, distribute, and support the use of Sugar, an open source desktop environment and learning platform. Sugar Labs is a member of the Software Freedom Conservancy, an umbrella organization for free software (FLOSS) projects.
+        </p><p>Without the dedication from our community, Sugar would not be possible. There are several ways people can contribute to Sugar from developing the Sugar OS platform to translating our international content. Anyone can help contribute to the Sugar project in several ways through the use of open source platforms like GitHub.</p>
             </div>
+     <br>  
+     <!-- Start of list of member list -->
+          <h4 class="titleuline">Member List</h4>
+          <br>
+          <div class="container" id="members">
+        
           </div>
-          <br><br>
-          <!-- Start of list of important people -->
-          <div class="row">
-              <!-- Person 1 -->
-              <div class="col-sm text-center">
-                    <img class="bigpimage" src="images/sugarlabsnoimg.png">
-                    <div class="container">
-                            <strong class="bpn">Firstname Lastname</strong>
-                            <p class="bpr">ROLE</p>
-                        </div>
-                  </div>
-                  <!-- Person 2 -->
-              <div class="col-sm text-center">
-                    <img class="bigpimage" src="images/sugarlabsnoimg.png">
-                    <div class="container">
-                            <strong class="bpn">Firstname Lastname</strong>
-                            <p class="bpr">ROLE</p>
-                        </div>
-                  </div>
-                  <!-- Person 3 -->
-              <div class="col-sm text-center">
-                    <img class="bigpimage" src="images/sugarlabsnoimg.png">
-                    <div class="container">
-                            <strong class="bpn">Firstname Lastname</strong>
-                            <p class="bpr">ROLE</p>
-                        </div>
-                  </div>
-                  <!-- Person 4 -->
-              <div class="col-sm text-center">
-                    <img class="bigpimage" src="images/sugarlabsnoimg.png">
-                    <div class="container">
-                            <strong class="bpn">Firstname Lastname</strong>
-                            <p class="bpr">ROLE</p>
-                        </div>
-                  </div>
-                  <!-- Person 5 -->
-              <div class="col-sm text-center">
-                    <img class="bigpimage" src="images/sugarlabsnoimg.png">
-                    <div class="container">
-                            <strong class="bpn">Firstname Lastname</strong>
-                            <p class="bpr">ROLE</p>
-                        </div>
-                  </div>
-                  
+          <nav aria-label="page nav" class="mininav">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" id="mback" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" id="mnext" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
           
-
-                </div>
                 <!-- Start of open source community -->
                 <br>
-                <h4 class="titleuline">Our open source community</h4>
-                <p class="intro">
-                        Cras ac mauris ipsum. Quisque volutpat libero eget condimentum dignissim. Pellentesque justo turpis, molestie nec sagittis id, finibus a sem. Donec magna quam, accumsan ut luctus ac, porta in ante. Fusce egestas leo id velit facilisis volutpat. Proin pharetra ullamcorper neque, id rhoncus est pharetra ac. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec auctor semper consectetur.
+                <br>
+                <h4 class="titleuline">Our Open Source Community</h4>
+                <p class="intro">Below are all the people who have contributed to Sugar repositories. Each one of them is helping to improve Sugar for the better.
                 </p>
-                <a href="https://github.com/sugarlabs" class="btn btn-primary">Visit our Github!</a><br><br>
-                <div class="container"><div class="row">
+                <a target='_blank' href="https://github.com/sugarlabs" class="btn btn-primary">Visit our Github</a><br><br>
+
+                <div class="container" id="open-source">
                                             
                 </div>
                 <br><br><br><br>

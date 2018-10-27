@@ -20,7 +20,7 @@ $( document ).ready(function() {
         $.each(contributors, function(i, item) {
                 if (profileid % 5 === 0) {phtml += "</div><div class='row top-buffer'>";}
                 phtml += "<div class='col-sm text-center'>";
-                phtml += "<a href='https://github.com/"+i+"'>";
+                phtml += "<a target='_blank' href='https://github.com/"+i+"'>";
                 phtml += "<img class='bigpimage' src='https://avatars.githubusercontent.com/"+i+"'>";
                 phtml += '<div class="container">';
                 phtml += '<strong class="bpn">@'+i+'</strong>';
