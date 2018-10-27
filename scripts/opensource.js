@@ -15,6 +15,7 @@ $( document ).ready(function() {
         } else {
             mpids = 4;
         }
+        document.getElementById("cno").innerHTML = Object.keys(contributors).length;
         if(min1 === 0) { $("#mback").prop("disabled", true);};
         var profileid = 0;
         $.each(contributors, function(i, item) {
