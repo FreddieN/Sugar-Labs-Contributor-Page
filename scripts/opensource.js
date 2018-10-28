@@ -56,7 +56,7 @@ $( document ).ready(function() {
         
 });
 function initdescs() {
-    $(".mlistp p").click(function(e) {
+    $(".mlistp").click(function(e) {
         var target = e.target || e.srcElement;
         clicked = target.innerHTML;
         name = clicked.split("<br>")[0];
