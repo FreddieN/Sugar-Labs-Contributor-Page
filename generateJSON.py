@@ -26,12 +26,16 @@ for x in contributors1:
 print("Importing members.csv") # import members.csv (manual entry)
 with open('members.csv', 'r') as file:
     for x in file:
-        (contributors['members'])[x.strip()] = {}
+        x = x.strip()
+        row = x.split(",")
+        (contributors['members'])[row[0]] = {}
+        ((contributors['members'])[row[0]])["desc"] = row[1]
 print("Sorting lists...") # sort all lists by alphabetical order
 for key in sorted(contributors['opensource'].keys()):
     (final['opensource'])[key] = {}
 for key in sorted(contributors['members'].keys()):
-    (final['members'])[key] = {}
+    (final['members'])[key] = (contributors['members'])[key]
+    
 print("Generating Timestamp...")
 final['dategen'] = datetime.datetime.today().strftime('%Y-%m-%d') # attach timestamp to display at bottom of page
 conjson = json.dumps(final)

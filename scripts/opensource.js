@@ -29,17 +29,9 @@ $( document ).ready(function() {
                 profileid++;
         });
         var profileid = 0;
-        $.each(members, function(i, item) {
-            if(profileid < max1 && profileid >= min1) {
-                if (profileid % mpids === 0) {mhtml += "</div><div class='row'>";}
-                    mhtml += "<div class='mlistp col text-center'><p>"+i+"</p></div>";
-                    
-                }
-            profileid++;
-    });
+        loadmemberlist();
         phtml += "</div><br><br> <p class='lastupdated text-center'>Last updated: "+lastupdated+"</p>"
         document.getElementById("open-source").innerHTML = phtml;
-        document.getElementById("members").innerHTML = mhtml;
         $("#mback").click(function() {
                 pmin1 = min1-20;
                 if(pmin1 >= 0) {
@@ -47,36 +39,50 @@ $( document ).ready(function() {
                 var profileid = 0;
                 max1 -= 20;
                 mhtml = "";
-                $.each(members, function(i, item) {
-                    if(profileid < max1 && profileid >= min1) {
-                        if (profileid % mpids === 0) {mhtml += "</div><div class='row'>";}
-                            mhtml += "<div class='mlistp col text-center'><p>"+i+"</p></div>";
-                            
-                        }
-                    profileid++;
-                
-        });
+                loadmemberlist();
     };
-        document.getElementById("members").innerHTML = mhtml;
     });
+        
         $("#mnext").click(function() {
             pmax1 = max1+20;
             if(pmax1 <= Object.keys(members).length+20) {
                 max1 += 20;
                 mhtml = "";
                 min1 += 20;
-                var profileid = 0;
-                $.each(members, function(i, item) {
-                    if(profileid < max1 && profileid >= min1) {
-                        if (profileid % mpids === 0) {mhtml += "</div><div class='row'>";}
-                            mhtml += "<div class='mlistp col text-center'><p>"+i+"</p></div>";
-                            
-                        }
-                    profileid++;
-                    
-            });
-            document.getElementById("members").innerHTML = mhtml;
+                loadmemberlist();
         };    
     });
+    
         
 });
+function initdescs() {
+    $(".mlistp p").click(function(e) {
+        var target = e.target || e.srcElement;
+        clicked = target.innerHTML;
+        name = clicked.split("<br>")[0];
+        targetdesc = members[name]['desc'];
+        if(targetdesc.length > 0) {
+            converter = new showdown.Converter(),
+            htmldesc = converter.makeHtml(targetdesc);
+            document.getElementById("mtitle").innerHTML = name;
+            document.getElementById("mdesc").innerHTML = htmldesc;
+            $("#mmodal").modal("show");
+        }
+    });
+};
+function loadmemberlist() {
+    var profileid = 0;
+    $.each(members, function(i, item) {
+        if(profileid < max1 && profileid >= min1) {
+            if (profileid % mpids === 0) {mhtml += "</div><div class='row'>";}
+                if(members[i]['desc'].length > 0) {
+                    mhtml += "<div class='mlistp col text-center'><p class='clickable'>"+i+"<br><small>Click to read more</small></p></div>";  
+                } else {
+                    mhtml += "<div class='mlistp col text-center'><p>"+i+"</p></div>";  
+                }
+            }
+        profileid++;
+});
+document.getElementById("members").innerHTML = mhtml;
+initdescs();
+}

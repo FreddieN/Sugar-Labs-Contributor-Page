@@ -16,5 +16,5 @@
 1. The script will generate a clists.json which you can point scripts/opensource.js to. Remember if remote that a Access-Control-Allow-Origin violation will occur if not setup properly
 
 ## Adding members to the member list
-1. Add a name onto a new line of members.csv
-    1. This could be setup so members could make pull requests to add their name, just make sure formatting is intact.
+1. Add a name onto a new line of members.csv, if the user wants to provide a description they can do so in markdown formatting in the following column.
+    1. This could be setup so members could make pull requests to add their name, just make sure formatting is intact. Before the pull request is made you should make sure that if the user provided a description that it is appropriate and does not contain any kind of XSS.
