@@ -1,6 +1,7 @@
 import json
 import gitapi
 import datetime
+import csv
 
 repos = gitapi.getSugarRepos() # gather all repos made by sugarlabs org
 contributors1 = [] 
@@ -20,20 +21,28 @@ final['members'] = {}
 contributors = {}
 contributors['opensource'] = {}
 contributors['members'] = {}
+contributors["membersnodesc"] = {}
+contributors['memberswithdesc'] = {}
 
 for x in contributors1:
     (contributors['opensource'])[x.strip()] = {}
 print("Importing members.csv") # import members.csv (manual entry)
 with open('members.csv', 'r') as file:
-    for x in file:
-        x = x.strip()
-        row = x.split(",")
+    cread = csv.reader(file)
+    for row in cread:
         (contributors['members'])[row[0]] = {}
         ((contributors['members'])[row[0]])["desc"] = row[1]
 print("Sorting lists...") # sort all lists by alphabetical order
 for key in sorted(contributors['opensource'].keys()):
     (final['opensource'])[key] = {}
-for key in sorted(contributors['members'].keys()):
+for key in contributors['members'].keys():  # splitting by description
+    if (len(((contributors['members'])[key])['desc']) == 0):
+        (contributors["membersnodesc"])[key] = (contributors['members'])[key]
+    else:
+        (contributors["memberswithdesc"])[key] = (contributors['members'])[key]
+for key in sorted(contributors['memberswithdesc'].keys()):
+    (final['members'])[key] = (contributors['members'])[key]
+for key in sorted(contributors['membersnodesc'].keys()):
     (final['members'])[key] = (contributors['members'])[key]
     
 print("Generating Timestamp...")

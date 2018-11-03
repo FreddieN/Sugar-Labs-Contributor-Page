@@ -9,7 +9,7 @@ $.getJSON( "clists.json", function( data ) {
         members = data['members']
         lastupdated = data['dategen'];
 });
-$( document ).ready(function() {
+$(window).on('pageshow', function() {
         if(screen.width < 920) {
             mpids = 2;
         } else {
