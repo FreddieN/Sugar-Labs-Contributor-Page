@@ -13,7 +13,7 @@
 1. Make sure members.csv is up to date with any relevant changes. This is a manual entry method for contributors not on GitHub.
 1. Run generateJSON.py - it will take a few minutes to generate the file.
     1. You can add this file to crontab on linux to automatically run the script. I would set this to once every week.
-1. The script will generate a clists.json which you can point scripts/opensource.js to. Remember if remote that a Access-Control-Allow-Origin violation will occur if not setup properly
+1. The script will generate a clists.json which you can point scripts/contributors.js to. Remember if remote that a Access-Control-Allow-Origin violation will occur if not setup properly
 
 ## Adding members to the member list
 1. Add a name onto a new line of members.csv, if the user wants to provide a description they can do so in markdown formatting in the following column.
