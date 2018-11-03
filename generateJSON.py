@@ -3,6 +3,11 @@ import gitapi
 import datetime
 import csv
 
+optout = []
+with open('optout', 'r') as file:
+    for line in file:
+        optout.append(line)
+
 repos = gitapi.getSugarRepos() # gather all repos made by sugarlabs org
 contributors1 = [] 
 count = 0
@@ -13,7 +18,8 @@ for repo in repos: # gather contributors for each repo - this takes a while make
     repoowner = (repos[repo])['owner']
     repocontributors = gitapi.getRepoContributors(repo, repoowner)
     for contributor in repocontributors:
-        contributors1.append(contributor)
+        if not(contributor in optout):
+            contributors1.append(contributor)
 
 final = {} # move current data to dictionary format for JSON
 final['opensource'] = {}
