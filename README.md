@@ -18,3 +18,8 @@
 ## Adding members to the member list
 1. Add a name onto a new line of members.csv, if the user wants to provide a description they can do so in markdown formatting in the following column.
     1. This could be setup so members could make pull requests to add their name, just make sure formatting is intact. Before the pull request is made you should make sure that if the user provided a description that it is appropriate and does not contain any kind of XSS.
+
+## User Opt-Out
+1. Add the user's github username onto a new line in the file optout.
+    1. This could be setup so users could make pull requests to opt themselves out.
+    
